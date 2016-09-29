@@ -13,6 +13,10 @@ var config = {
   module : {
     loaders: [
       {
+        test: /\.js$/,
+        exclude: /(node_modules|build)/,
+        loader: 'eslint-loader'
+      },{
         test: /\.js?$/,
         exclude: /(node_modules|bower_components)/,
         include : APP_DIR,
@@ -23,6 +27,9 @@ var config = {
         }
       }
     ]
+  },
+  eslint: {
+    configFile: '.eslintrc'
   }
 };
 
